@@ -18,17 +18,88 @@
     </header>
     <main>
         <section class="gallery">
-            <h2>Photo Gallery</h2>
-            <div class="gallery-grid">
-                <!-- Example images, replace with your own -->
-                <img src="images/sample1.jpg" alt="Sample Photo 1">
-                <img src="images/sample2.jpg" alt="Sample Photo 2">
-                <img src="images/sample3.jpg" alt="Sample Photo 3">
+            <div class="gallery-heading">
+                <h2>Photo Albums</h2>
+                <div class="heading-underline"></div>
+            </div>
+            <div class="album-grid">
+                <a href="albums/godafoss.html" class="album-card">
+                    <img src="images/godafoss/C23A9837.jpg" alt="Goðafoss Album Cover">
+                    <div class="album-title">Goðafoss</div>
+                </a>
+                <a href="albums/ka-valur.html" class="album-card">
+                    <img src="images/ka-valur/C23A8654.jpg" alt="KA - Valur Album Cover">
+                    <div class="album-title">KA - Valur</div>
+                </a>
+                <a href="albums/snaefellsnes.html" class="album-card">
+                    <img src="images/snaefellsnes/Snæfellsnes-1.jpg" alt="Snæfellsnes Album Cover">
+                    <div class="album-title">Snæfellsnes</div>
+                </a>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 My Photography Portfolio</p>
+    <p>&copy; 2025 Guðmundur Hermann Þórlaugarson – ghinfocus.net</p>
     </footer>
+
+<script>
+// Lightbox with navigation
+const galleryLinks = Array.from(document.querySelectorAll('.gallery-link'));
+let currentIndex = 0;
+
+function showModal(index) {
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+    currentIndex = index;
+    modal.style.display = 'block';
+    modalImg.src = galleryLinks[currentIndex].href;
+}
+
+galleryLinks.forEach((link, idx) => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showModal(idx);
+    });
+});
+
+document.getElementById('lightbox-close').onclick = function() {
+    document.getElementById('lightbox-modal').style.display = 'none';
+    document.getElementById('lightbox-img').src = '';
+};
+
+document.getElementById('lightbox-prev').onclick = function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + galleryLinks.length) % galleryLinks.length;
+    document.getElementById('lightbox-img').src = galleryLinks[currentIndex].href;
+};
+
+document.getElementById('lightbox-next').onclick = function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % galleryLinks.length;
+    document.getElementById('lightbox-img').src = galleryLinks[currentIndex].href;
+};
+
+window.onclick = function(event) {
+    const modal = document.getElementById('lightbox-modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.getElementById('lightbox-img').src = '';
+    }
+};
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal.style.display === 'block') {
+        if (e.key === 'ArrowLeft') {
+            document.getElementById('lightbox-prev').click();
+        } else if (e.key === 'ArrowRight') {
+            document.getElementById('lightbox-next').click();
+        } else if (e.key === 'Escape') {
+            document.getElementById('lightbox-close').click();
+        }
+    }
+});
+</script>
 </body>
 </html>

@@ -1,3 +1,23 @@
+/* Gallery Heading Centered and Underline */
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.gallery-heading h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.heading-underline {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0077cc 0%, #00c6a7 100%);
+    margin: 0 auto 0.5rem auto;
+    border-radius: 2px;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -29,20 +49,271 @@ footer {
     background: #222;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        background: #222;
+        border-top: 1px solid #e0e0e0;
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+        font-size: 1rem;
+        color: #888;
+        z-index: 100;
+        margin-top: 0;
 }
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+/* Hero Section */
+.hero {
+    background: url('images/Snæfellsnes-33.jpg') center/cover no-repeat;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: #fff;
+    color: #222;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.hero-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* Gallery Preview */
+.featured-preview {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.gallery-preview-grid {
+    display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
 }
+.gallery-preview-grid img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.gallery-preview-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Album Grid for Gallery */
+.album-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #f4f4f4 60%, #e0e7ef 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    text-decoration: none;
+    color: #222;
+    width: 260px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    border: 2px solid #eaeaea;
+    margin-bottom: 1.5rem;
+}
+.album-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.album-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1.1rem 0;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.album-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
+
+/* Back to Gallery Button */
+.back-to-gallery-btn {
+    display: inline-block;
+    margin: 2rem 0 1.5rem 2rem;
+    padding: 0.5rem 1.5rem;
+    background: #222;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.back-to-gallery-btn:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* About Section */
+.about-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.about-photo {
+    flex: 0 0 auto;
+    text-align: center;
+}
+.about-bio {
+    flex: 1 1 320px;
+    min-width: 260px;
+}
+.about-bio h2 {
+    margin-top: 0;
+}
+.about-bio a {
+    color: #222;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.about-bio a:hover {
+    color: #0077cc;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.contact-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    max-width: 1200px;
+    margin: 2rem auto 1rem auto;
+    padding: 2rem 1rem;
+}
+.contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #f4f4f4;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.contact-method:hover {
+    background: #222;
+    color: #fff;
+}
+.contact-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-grid {
+    display: grid;
+            grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    @media (max-width: 1200px) {
+        .gallery-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 900px) {
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 600px) {
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+}
 .gallery-grid img {
     width: 100%;
+    aspect-ratio: 3/4;
     height: auto;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -70,4 +341,86 @@ footer {
 }
 .contact-form button:hover {
     background: #444;
+}
+
+/* Lightbox Modal Styles */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.lightbox-content {
+    margin: 5vh auto;
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.lightbox-close:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background 0.2s;
+}
+.lightbox-arrow:hover {
+    background: rgba(0,0,0,0.6);
+}
+.lightbox-arrow#lightbox-prev {
+    left: 30px;
+}
+.lightbox-arrow#lightbox-next {
+    right: 30px;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }

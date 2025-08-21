@@ -4,7 +4,7 @@ This is my personal photography portfolio, built with simple HTML and CSS.
 It showcases a curated selection of my work and serves as a central hub to connect with me outside of social media.
 
 ## 🌐 Live Site
-[https://yourdomain.com](https://yourdomain.com)
+[Portfolio](https://gudmundur27.github.io/portfolio/)
 
 ## 📸 Features
 - Minimal, fast-loading static site

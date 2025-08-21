@@ -1,0 +1,14 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node.js (if you later add npm packages)
+node_modules/
+npm-debug.log*
+
+# Build outputs (if you later use a bundler)
+dist/
+build/
+
+# Environment variables (if you add secrets someday)
+.env

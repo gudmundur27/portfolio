@@ -1,3 +1,14 @@
+/* Album Section - More spacious and open */
+.album-section {
+    max-width: 1800px;
+    width: 96vw;
+    margin: 0 auto 2rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    min-height: 70vh;
+}
 /* Gallery Heading Centered and Underline */
 .gallery-heading {
     text-align: center;
@@ -24,6 +35,9 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 header {
     background: #222;
@@ -42,26 +56,14 @@ nav a:hover {
 }
 main {
     padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-}
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
-        background: #222;
-        border-top: 1px solid #e0e0e0;
-        box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
-        font-size: 1rem;
-        color: #888;
-        z-index: 100;
-        margin-top: 0;
+    max-width: 98vw;
+    margin: 0 auto 2rem auto;
+    padding: 2.5rem 1vw 2rem 1vw;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    min-height: 70vh;
+    flex: 1 0 auto;
 }
 
 /* Hero Section */
@@ -285,14 +287,16 @@ footer {
     justify-content: center;
 }
 .gallery-grid {
-    display: grid;
-            grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 0.5rem;
     margin-top: 1rem;
-    max-width: 1100px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    }
+    justify-content: center;
+}
 
     @media (max-width: 1200px) {
         .gallery-grid {
@@ -310,12 +314,18 @@ footer {
         }
 }
 .gallery-grid img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    height: auto;
-    object-fit: cover;
+    height: 340px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #eee;
+    display: block;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: 100%;
 }
 .contact-form {
     display: flex;
@@ -423,4 +433,18 @@ footer {
     color: #1a1a1a;
     font-weight: 700;
     text-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background: #222;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    font-size: 1rem;
+    color: #888;
+    margin-top: 0;
+    flex-shrink: 0;
 }

@@ -21,13 +21,7 @@
         <section class="album-section">
             <h2>Goðafoss</h2>
             <p>Photos from the stunning Goðafoss waterfall in Iceland.</p>
-            <div class="gallery-grid">
-                <a href="../images/godafoss/C23A9837.jpg" class="gallery-link"><img src="../images/godafoss/C23A9837.jpg" alt="Goðafoss 1"></a>
-                <a href="../images/godafoss/C23A9911.jpg" class="gallery-link"><img src="../images/godafoss/C23A9911.jpg" alt="Goðafoss 2"></a>
-                <a href="../images/godafoss/C23A9913.jpg" class="gallery-link"><img src="../images/godafoss/C23A9913.jpg" alt="Goðafoss 3"></a>
-                <a href="../images/godafoss/C23A9946.jpg" class="gallery-link"><img src="../images/godafoss/C23A9946.jpg" alt="Goðafoss 4"></a>
-                <a href="../images/godafoss/C23A9951.jpg" class="gallery-link"><img src="../images/godafoss/C23A9951.jpg" alt="Goðafoss 5"></a>
-            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
         </section>
     </main>
     <footer>
@@ -41,5 +35,16 @@
     <span class="lightbox-arrow" id="lightbox-next">&#10095;</span>
 </div>
 <script src="../lightbox.js"></script>
+<script src="./justified-gallery.js"></script>
+<script src="./godafoss-images.js"></script>
+<script>
+// Dynamically render images from godafossImages array
+const galleryGrid = document.getElementById('gallery-grid');
+if (window.godafossImages && galleryGrid) {
+    galleryGrid.innerHTML = godafossImages.map(img =>
+        `<a href="${img.url}" class="gallery-link"><img src="${img.url}" alt="${img.caption || 'Goðafoss photo'}"><span class="caption">${img.caption || ''}</span></a>`
+    ).join('');
+}
+</script>
 </body>
 </html>

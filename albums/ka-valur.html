@@ -21,18 +21,7 @@
         <section class="album-section">
             <h2>KA - Valur</h2>
             <p>Photos from the KA vs Valur match.</p>
-            <div class="gallery-grid">
-                <a href="../images/ka-valur/C23A8654.jpg" class="gallery-link"><img src="../images/ka-valur/C23A8654.jpg" alt="KA - Valur 1"></a>
-                <a href="../images/ka-valur/C23A8741.jpg" class="gallery-link"><img src="../images/ka-valur/C23A8741.jpg" alt="KA - Valur 2"></a>
-                <a href="../images/ka-valur/C23A8840.jpg" class="gallery-link"><img src="../images/ka-valur/C23A8840.jpg" alt="KA - Valur 3"></a>
-                <a href="../images/ka-valur/C23A9024.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9024.jpg" alt="KA - Valur 4"></a>
-                <a href="../images/ka-valur/C23A9057.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9057.jpg" alt="KA - Valur 5"></a>
-                <a href="../images/ka-valur/C23A9066.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9066.jpg" alt="KA - Valur 6"></a>
-                <a href="../images/ka-valur/C23A9141.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9141.jpg" alt="KA - Valur 7"></a>
-                <a href="../images/ka-valur/C23A9242.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9242.jpg" alt="KA - Valur 8"></a>
-                <a href="../images/ka-valur/C23A9251.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9251.jpg" alt="KA - Valur 9"></a>
-                <a href="../images/ka-valur/C23A9269.jpg" class="gallery-link"><img src="../images/ka-valur/C23A9269.jpg" alt="KA - Valur 10"></a>
-            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
         </section>
     </main>
     <footer>
@@ -46,5 +35,16 @@
     <span class="lightbox-arrow" id="lightbox-next">&#10095;</span>
 </div>
 <script src="../lightbox.js"></script>
+<script src="./justified-gallery.js"></script>
+<script src="./ka-valur-images.js"></script>
+<script>
+// Dynamically render images from kaValurImages array
+const galleryGrid = document.getElementById('gallery-grid');
+if (window.kaValurImages && galleryGrid) {
+    galleryGrid.innerHTML = kaValurImages.map(img =>
+        `<a href="${img.url}" class="gallery-link"><img src="${img.url}" alt="${img.caption || 'KA - Valur photo'}"><span class="caption">${img.caption || ''}</span></a>`
+    ).join('');
+}
+</script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 /* Album Section - More spacious and open */
 .album-section {
     max-width: 1800px;
-    width: 96vw;
     margin: 0 auto 2rem auto;
     padding: 2.5rem 2rem 2rem 2rem;
     background: #fff;
@@ -88,6 +87,7 @@ main {
     position: relative;
     z-index: 2;
     text-align: center;
+    padding: 2rem;
 }
 .hero-content h2 {
     font-size: 2.5rem;
@@ -404,17 +404,19 @@ main {
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 700;
     cursor: pointer;
     z-index: 1001;
     background: rgba(0,0,0,0.3);
     border-radius: 50%;
     width: 56px;
     height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    line-height: 1;
+    padding: 0;
     user-select: none;
     transition: background 0.2s;
 }
@@ -426,13 +428,6 @@ main {
 }
 .lightbox-arrow#lightbox-next {
     right: 30px;
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-    color: #1a1a1a;
-    font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 /* Footer Styles */

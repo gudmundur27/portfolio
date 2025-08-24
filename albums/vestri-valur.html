@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vestri - Valur - Photography Portfolio</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-title">
+        <a href="/" class="logo-link">
+          <img src="../images/ghlogowhite.png" alt="Logo" class="title-logo" />
+        </a>
+        <h1>Vestri - Valur</h1>
+      </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <a href="../gallery.html" class="back-to-gallery-btn"
+        >&larr; Back to Gallery</a
+      >
+      <section class="album-section">
+        <h2>Vestri - Valur</h2>
+        <p>Myndir úr úrslitaleiknum í Mjólkurbikarnum 2025.</p>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Guðmundur Hermann Þórlaugarson – ghinfocus.net</p>
+    </footer>
+    <!-- Lightbox Modal Include -->
+    <div id="lightbox-modal" class="lightbox-modal" style="display: none">
+      <span class="lightbox-close" id="lightbox-close">&times;</span>
+      <span class="lightbox-arrow" id="lightbox-prev">&#10094;</span>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        src=""
+        alt="Full Size Photo"
+      />
+      <span class="lightbox-arrow" id="lightbox-next">&#10095;</span>
+    </div>
+    <script src="../lightbox.js"></script>
+    <script src="./justified-gallery.js"></script>
+    <script src="./vestri-valur-images.js"></script>
+    <script>
+      // Dynamically render images from vestriValurImages array
+      const galleryGrid = document.getElementById("gallery-grid");
+      if (window.vestriValurImages && galleryGrid) {
+        galleryGrid.innerHTML = vestriValurImages
+          .map(
+            (img) =>
+              `<a href="${img.url}" class="gallery-link"><img src="${
+                img.url
+              }" alt="${
+                img.caption || "Vestri - Valur photo"
+              }"><span class="caption">${img.caption || ""}</span></a>`
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>
